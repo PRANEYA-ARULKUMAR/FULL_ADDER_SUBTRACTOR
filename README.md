@@ -37,19 +37,73 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+(i)FULL ADDER
+
+![fatt](https://github.com/user-attachments/assets/ac37e8d4-0a10-47f3-a83a-a4aee31cd9c7)
+
+(ii)FULL SUBTRACTOR
+
+![fstt](https://github.com/user-attachments/assets/6f43b205-9187-4d76-a3c6-4094e6b291a4)
+
 
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
+
+
 
 **Program:**
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+(i)FULL ADDER
+```
+module faexp(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+```
+(ii)FULL SUBTRACTOR
+```  
+module fsexp(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+endmodule
+```
+
+
 
 **RTL Schematic**
 
+(i)FULL ADDER
+
+![fass](https://github.com/user-attachments/assets/28f2979d-10a1-4c33-903c-a83918388567)
+
+(ii)FULL SUBTRACTOR
+
+![fsss](https://github.com/user-attachments/assets/0beda55a-4e5b-43dc-8f9b-7667e0bb1ee1)
+
 **Output Timing Waveform**
+
+(i)FULL ADDER
+
+![fawss](https://github.com/user-attachments/assets/4023f45e-a875-4d59-8e52-c58183c75592)
+
+(ii)FULL SUBTRACTOR
+![fswss](https://github.com/user-attachments/assets/8d1aad19-6ebc-41fa-8052-275da7aebcd4)
+
 
 **Result:**
 
